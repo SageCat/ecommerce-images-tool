@@ -21,4 +21,4 @@ for file in files:
     # 获取文件的分享链接
     response = drive_service.files().get(fileId=file_id, fields='webViewLink').execute()
     link = response.get('webViewLink')
-    print(f"File Name: {file_name}, Share Link: {link}")
+    print(f"{file_name},{link}")
