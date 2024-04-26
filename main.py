@@ -10,8 +10,12 @@ drive_service = build('drive', 'v3', credentials=creds)
 # 要获取链接的文件夹的 ID
 folder_id = '1HjDT-yHnGB39-eINi0P2tJhR_YHShabr'
 
+page_token = None
 # 获取文件夹内的所有文件
-results = drive_service.files().list(q=f"'{folder_id}' in parents", fields="files(id, name)").execute()
+results = drive_service.files().list(q=f"'{folder_id}' in parents",
+                                     fields='nextPageToken, files(id, name)',
+                                     pageSize=1000,
+                                     pageToken=page_token).execute()
 files = results.get('files', [])
 
 # 遍历文件并获取分享链接
@@ -21,4 +25,4 @@ for file in files:
     # 获取文件的分享链接
     response = drive_service.files().get(fileId=file_id, fields='webViewLink').execute()
     link = response.get('webViewLink')
-    print(f"{file_name},{link}")
+    print(f"Phone Case,{file_name},{link}")
