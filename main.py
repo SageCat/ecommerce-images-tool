@@ -8,6 +8,7 @@ creds = Credentials.from_service_account_file('credentials.json')
 drive_service = build('drive', 'v3', credentials=creds)
 
 # 要获取链接的文件夹的 ID
+# 手机壳的文件夹ID: 1HjDT-yHnGB39-eINi0P2tJhR_YHShabr
 folder_id = '1HjDT-yHnGB39-eINi0P2tJhR_YHShabr'
 
 page_token = None
