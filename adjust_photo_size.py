@@ -1,6 +1,7 @@
 from PIL import Image
 import os
 
+
 def resize_and_center_image(image_path, output_folder, target_size):
     # 打开图像
     image = Image.open(image_path)
@@ -37,6 +38,7 @@ def resize_and_center_image(image_path, output_folder, target_size):
     # 保存调整后的图像
     output_path = os.path.join(output_folder, os.path.basename(image_path))
     canvas.save(output_path)
+
 
 # 设置目标尺寸
 target_size = (660, 900)

@@ -1,4 +1,5 @@
 import pandas as pd
+import globals
 
 
 def transpose(product_cat, single_pro_photo_count, csv_file):
@@ -10,12 +11,9 @@ def transpose(product_cat, single_pro_photo_count, csv_file):
     columns = []
     for i in range(single_pro_photo_count):
         columns.append('Image URL ' + str(i+1))
-
+    print('========= Data Transpose Finished! ==========')
     return pd.DataFrame(new_data, columns=columns)
 
 
-product_category = 'Phone Case'
-single_product_photo_count = 4
-csv_filename = 'share_links.csv'
-converted_data = transpose(product_category, single_product_photo_count, csv_filename)
-converted_data.to_excel(f'NIS {product_category} Photos URL.xlsx', index=False)
+converted_data = transpose(globals.PRODUCT_CATEGORY, globals.SINGLE_PRODUCT_PHOTO_COUNT, globals.CSV_FILE)
+converted_data.to_excel(f'excel/NIS {globals.PRODUCT_CATEGORY} Photos URL.xlsx', index=False)
