@@ -42,7 +42,7 @@ def resize_and_center_image(image_path, output_folder, target_size):
 target_size = (660, 900)
 
 # 遍历当前目录下的所有文件
-current_directory = r"D:\Documents\公司相关\产品素材\手机壳"
+current_directory = r"C:\Users\Sage\PycharmProjects\noon-images\images\noon\ToteBag"
 output_folder = os.path.join(current_directory, 'temp')
 for filename in os.listdir(current_directory):
     filepath = os.path.join(current_directory, filename)
