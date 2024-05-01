@@ -13,7 +13,3 @@ def transpose(product_cat, single_pro_photo_count, csv_file):
         columns.append('Image URL ' + str(i+1))
     print('========= Data Transpose Finished! ==========')
     return pd.DataFrame(new_data, columns=columns)
-
-
-# converted_data = transpose(globals.PRODUCT_CATEGORY, globals.SINGLE_PRODUCT_PHOTO_COUNT, globals.CSV_FILE)
-# converted_data.to_excel(f'../excel/NIS {globals.PRODUCT_CATEGORY} Photos URL.xlsx', index=False)
